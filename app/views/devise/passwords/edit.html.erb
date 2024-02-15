@@ -1,0 +1,34 @@
+<div class="card card-md">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.hidden_field :reset_password_token, as: :hidden %>
+
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Neues Passwort vergeben</h2>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%- if notice.present? %>
+        <div class="alert alert-primary" role="alert">
+          <%= notice %>
+        </div>
+      <%- end %>
+      <%- if alert.present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <%- end %>
+      <div class="mb-3">
+        <label class="form-label">Neues Passwort</label>
+        <%= f.password_field :password, autocomplete: "password", class: "form-control", required: true %>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Neues Passwort wiederholen</label>
+        <%= f.password_field :password_confirmation, autocomplete: "password", class: "form-control", required: true %>
+      </div>
+      <div class="form-footer">
+        <%= f.submit "Passwort ändern", class: "btn btn-primary w-100" %>
+      </div>
+    </div>
+    <div class="card-footer ">
+      <%= render "devise/shared/links" %>
+    </div>
+  <%- end %>
+</div>

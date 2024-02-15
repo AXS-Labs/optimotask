@@ -1,0 +1,32 @@
+<div class="card card-md">
+  <%= simple_form_for resource, as: resource_name, url: user_registration_path, wrapper: :vertical_form do |f| %>
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Ein neues Konto anlegen</h2>
+      <%- if notice.present? %>
+        <div class="alert alert-primary" role="alert">
+          <%= notice %>
+        </div>
+      <%- end %>
+      <%- if alert.present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <%- end %>
+      <div class="mb-3">
+        <%= f.input :email, autocomplete: "email", autofocus: true, class: "form-control" %>
+      </div>
+      <div class="mb-2">
+        <%= f.input :password, autocomplete: "new-password", class: "form-control" %>
+      </div>
+      <div class="mb-2">
+        <%= f.input :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+      </div>
+      <div class="form-footer">
+        <%= f.submit "Konto erstellen", class: "btn btn-primary w-100" %>
+      </div>
+    </div>
+    <div class="card-footer ">
+      <%= render "devise/shared/links" %>
+    </div>
+  <%- end %>
+</div>

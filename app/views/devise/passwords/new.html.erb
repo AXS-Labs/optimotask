@@ -1,0 +1,28 @@
+<div class="card card-md">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Passwort vergessen</h2>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%- if notice.present? %>
+        <div class="alert alert-primary" role="alert">
+          <%= notice %>
+        </div>
+      <%- end %>
+      <%- if alert.present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <%- end %>
+      <div class="mb-3">
+        <label class="form-label">E-Mail-Adresse</label>
+        <%= f.email_field :email, autocomplete: "email", autofocus: true, class: "form-control" %>
+      </div>
+      <div class="form-footer">
+        <%= f.submit "Neues Passwort anfordern", class: "btn btn-primary w-100" %>
+      </div>
+    </div>
+    <div class="card-footer ">
+      <%= render "devise/shared/links" %>
+    </div>
+  <%- end %>
+</div>

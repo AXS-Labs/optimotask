@@ -6,10 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 
     <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
+
+    <%= vite_typescript_tag 'account' %>
+    <%= vite_stylesheet_tag 'account.scss', "data-turbo-track": "reload" %>
 
     <!--
       If using a TypeScript entrypoint file:
@@ -23,7 +26,12 @@
 
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="layout-fluid <%= body_class %>">
+    <div class="page">
+      <%= render 'navbar' %>
+      <div class="page-wrapper">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

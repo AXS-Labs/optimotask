@@ -1,0 +1,41 @@
+<div class="card card-md">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Im Dashboard anmelden</h2>
+      <%- if notice.present? %>
+        <div class="alert alert-primary" role="alert">
+          <%= notice %>
+        </div>
+      <%- end %>
+      <%- if alert.present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <%- end %>
+      <div class="mb-3">
+        <label class="form-label">E-Mail-Adresse</label>
+        <%= f.email_field :email, autocomplete: "email", autofocus: true, class: "form-control" %>
+      </div>
+      <div class="mb-2">
+        <label class="form-label">
+          Passwort
+        </label>
+        <div class="input-group input-group-flat">
+          <%= f.password_field :password, autocomplete: "password", class: "form-control" %>
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="form-check">
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          <span class="form-check-label">Angemeldet bleiben?</span>
+        </label>
+      </div>
+      <div class="form-footer">
+        <%= f.submit "Anmelden", class: "btn btn-primary w-100" %>
+      </div>
+    </div>
+    <div class="card-footer ">
+      <%= render "devise/shared/links" %>
+    </div>
+  <%- end %>
+</div>
