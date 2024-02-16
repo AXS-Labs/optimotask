@@ -4,4 +4,8 @@ class Account::BoardsController < Account::BaseController
 
     @boards = policy_scope(Board).order(:title)
   end
+
+  def show
+    @board = authorize(Board.find(params[:id]))
+  end
 end
