@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  namespace :account do
+    resources :boards
+  end
+
   root to: "account/dashboards#index"
 end
