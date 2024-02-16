@@ -14,14 +14,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./">
+            <%= link_to account_boards_path, class: 'nav-link' do %>
               <span class="nav-link-icon d-md-none d-lg-inline-block">
                 <%= svg_icon 'brand-trello' %>
               </span>
               <span class="nav-link-title">
                 Boards
               </span>
-            </a>
+            <% end %>
           </li>
         </ul>
       </div>
