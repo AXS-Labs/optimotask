@@ -1,0 +1,43 @@
+version: v1.0
+name: Optimopaper
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+blocks:
+  - name: "Test"
+    task:
+      env_vars:
+        - name: RAILS_ENV
+          value: test
+        - name: DB_HOST
+          value: "127.0.0.1"
+        - name: DB_USERNAME
+          value: postgres
+        - name: DB_PASSWORD
+          value: password
+        - name: DB_PORT
+          value: "5434"
+        - name: DB_DATABASE
+          value: optimotask
+
+      prologue:
+        commands:
+          - sem-version ruby 3.3.0
+          - checkout
+
+      jobs:
+        - name: Rspec
+          commands:
+            - cp docker-compose.example.yml docker-compose.yml
+            - cp config/database.example.yml config/database.yml
+            - docker-compose up -d --quiet-pull
+            - sudo apt-get update || true
+            - cache restore bundle-$(checksum Gemfile.lock)
+            - bundle install --deployment --path vendor/bundle
+            - npm install
+            - cache store bundle-$(checksum Gemfile.lock) vendor/bundle
+            - while ! nc -z ${DB_HOST} ${DB_PORT}; do sleep 0.1; done
+            - bundle exec rake db:setup
+            - bundle exec rspec
