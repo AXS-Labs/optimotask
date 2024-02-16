@@ -5,6 +5,10 @@
     "vite-plugin-ruby": "^5.0.0"
   },
   "dependencies": {
-    "@tabler/core": "^1.0.0-beta20"
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.2",
+    "@tabler/core": "^1.0.0-beta20",
+    "stimulus-vite-helpers": "^3.1.0",
+    "vite-plugin-stimulus-hmr": "^3.0.0"
   }
 }
