@@ -1,5 +1,11 @@
 <%= render(Tabler::Page::WrapperComponent.new) do %>
   <%= render(Tabler::Page::HeaderComponent.new(title: t('.title'))) do |c| %>
+    <% c.with_actions do %>
+      <%= link_to new_polymorphic_path([:account, Board]), class: "btn btn-primary", data: { turbo_frame: "modal" } do %>
+        <%= svg_icon 'plus' %>
+        <%= t('.new', model: Board.model_name.human) %>
+      <%- end %>
+    <% end %>
   <% end %>
 
   <%= render(Tabler::Page::BodyComponent.new) do %>

@@ -45,6 +45,7 @@ de:
     boards:
       index:
         title: 'Deine Boards'
+        new: 'Neues Board anlegen'
       new:
         title: 'Neues Board erstellen'
         close: 'Abbrechen'
