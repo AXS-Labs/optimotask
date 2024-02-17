@@ -19,7 +19,7 @@ class Account::BoardsController < Account::BaseController
 
     if @board.save
       respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.action(:redirect, account_board_path(@board)) }
+        format.turbo_stream { render turbo_stream: turbo_stream.redirect(account_board_path(@board)) }
       end
     else
       render :new, status: :unprocessable_entity
