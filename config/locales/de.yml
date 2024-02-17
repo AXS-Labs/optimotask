@@ -30,14 +30,30 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 de:
+  simple_form:
+    "yes": 'Ja'
+    "no": 'Nein'
+    required:
+      text: 'erforderlich'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Es sind Fehler aufgetreten."
   account:
     boards:
       index:
         title: 'Deine Boards'
+      new:
+        title: 'Neues Board erstellen'
+        close: 'Abbrechen'
   activerecord:
     attributes:
       user:
         email: E-Mail
+      board:
+        title: Titel
     models:
       user:
         one: Benutzer
