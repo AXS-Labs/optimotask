@@ -1,0 +1,5 @@
+<%= turbo_stream.update "boards" do %>
+  <%= render partial: "boards", locals: { boards: @boards } %>
+<% end %>
+
+<%= turbo_stream.redirect(account_board_path(@board)) %>

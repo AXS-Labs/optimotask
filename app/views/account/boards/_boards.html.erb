@@ -1,0 +1,16 @@
+<% boards.each do |board| %>
+  <div class="list-group-item">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <a href="#">
+          <%= svg_icon 'brand-trello' %>
+        </a>
+      </div>
+      <div class="col text-truncate">
+        <%= link_to account_board_path(board), class: "text-reset d-block" do %>
+          <%= board.title %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

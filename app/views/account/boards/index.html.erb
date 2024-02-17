@@ -13,24 +13,9 @@
       <% if @boards.present? %>
         <div class="col-12">
           <div class="card">
-            <div class="list-group list-group-flush list-group-hoverable">
-              <% @boards.each do |board| %>
-                <div class="list-group-item">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      <a href="#">
-                        <%= svg_icon 'brand-trello' %>
-                      </a>
-                    </div>
-                    <div class="col text-truncate">
-                      <%= link_to account_board_path(board), class: "text-reset d-block" do %>
-                        <%= board.title %>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
+            <%= turbo_frame_tag 'boards', class: "list-group list-group-flush list-group-hoverable" do %>
+              <%= render 'boards', boards: @boards %>
+            <% end %>
           </div>
         </div>
       <% end %>

@@ -18,9 +18,7 @@ class Account::BoardsController < Account::BaseController
     @board.organization = current_user.organizations.last
 
     if @board.save
-      respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.redirect(account_board_path(@board)) }
-      end
+      @boards = policy_scope(Board).order(:title)
     else
       render :new, status: :unprocessable_entity
     end
