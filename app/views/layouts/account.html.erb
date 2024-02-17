@@ -33,5 +33,7 @@
         <%= yield %>
       </div>
     </div>
+
+    <%= turbo_frame_tag "modal", data: { turbo_temporary: true } %>
   </body>
 </html>
