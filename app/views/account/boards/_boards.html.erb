@@ -7,7 +7,7 @@
         </a>
       </div>
       <div class="col text-truncate">
-        <%= link_to account_board_path(board), class: "text-reset d-block" do %>
+        <%= link_to account_board_path(board), class: "text-reset d-block", data: { turbo_frame: '_top' } do %>
           <%= board.title %>
         <% end %>
       </div>
