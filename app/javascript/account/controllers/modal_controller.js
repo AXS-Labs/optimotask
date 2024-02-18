@@ -18,7 +18,6 @@ export default class extends Controller {
     if (!modal) return
 
     modal.hide()
-    modal.dispose()
 
     this.element.src = null
     this.element.replaceChildren()
@@ -41,7 +40,6 @@ export default class extends Controller {
 
     if (!modal) return
 
-    modal.hide()
     modal.dispose()
   }
 
