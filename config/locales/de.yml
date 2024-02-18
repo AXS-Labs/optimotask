@@ -54,6 +54,7 @@ de:
         close: 'Abbrechen'
       boards:
         delete: Board löschen
+        edit: Board editieren
       confirm_destroy:
         headline: Bist du dir sicher?
         text: Möchtest du das Board "%{title}" wirklich löschen? Alle Karten werden ebenfalls gelöscht. Dies kann nicht mehr rückgängig gemacht werden
