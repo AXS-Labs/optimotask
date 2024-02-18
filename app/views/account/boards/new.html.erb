@@ -1,5 +1,5 @@
 <%= turbo_frame_tag 'modal' do %>
-  <div class="modal modal-blur fade" tabindex="-1" role="dialog" aria-modal="true" style="display: block;">
+  <div class="modal modal-blur" tabindex="-1" role="dialog" aria-modal="true" style="display: block;">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <%= turbo_frame_tag 'modal-content', class: 'modal-content' do %>
         <%= simple_form_for @board, url: account_boards_path, method: :post do |form| %>
