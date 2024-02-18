@@ -8,7 +8,7 @@
       </div>
       <div class="col text-truncate">
         <%= link_to account_board_path(board), class: "text-reset d-block", data: { turbo_frame: '_top' } do %>
-          <%= board.title %>
+          <span id="<%= dom_id(board, :title) %>"><%= board.title %></span>
         <% end %>
       </div>
       <div class="col-auto lh-1">
