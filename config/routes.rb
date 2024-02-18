@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     resources :boards
   end
 
-  root to: "account/dashboards#index"
+  root to: redirect("account/boards")
 end
