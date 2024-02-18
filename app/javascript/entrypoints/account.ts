@@ -14,4 +14,5 @@ Turbo.StreamActions.redirect = function() {
 };
 
 Turbo.StreamActions.close_modal = function() {
+  eventManager.emitModalClose()
 };
