@@ -1,3 +1,5 @@
+<%= turbo_stream.close_modal %>
+
 <%= turbo_stream.update "boards" do %>
   <%= render partial: "boards", locals: { boards: @boards } %>
 <% end %>
