@@ -49,6 +49,9 @@ de:
       new:
         title: 'Neues Board erstellen'
         close: 'Abbrechen'
+      edit:
+        title: Board bearbeiten
+        close: 'Abbrechen'
   activerecord:
     attributes:
       user:

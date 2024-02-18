@@ -24,9 +24,25 @@ class Account::BoardsController < Account::BaseController
     end
   end
 
+  def edit
+    @board = authorize(Board.find(params[:id]))
+  end
+
+  def update
+    @board = authorize(Board.find(params[:id]))
+
+    unless @board.update(update_params)
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def create_params
+    params.require(:board).permit(:title)
+  end
+
+  def update_params
     params.require(:board).permit(:title)
   end
 end

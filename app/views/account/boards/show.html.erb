@@ -1,5 +1,11 @@
 <%= render(Tabler::Page::WrapperComponent.new) do %>
-  <%= render(Tabler::Page::HeaderComponent.new(title: @board.title)) %>
+  <%= render(Tabler::Page::HeaderComponent.new(title: @board.title)) do |c| %>
+    <% c.with_actions do %>
+      <%= link_to edit_account_board_path(@board), class: 'btn btn-ghost-secondary btn-icon', data: { turbo_frame: 'modal' } do %>
+        <%= svg_icon 'settings' %>
+      <% end %>
+    <% end %>
+  <% end %>
 
   <%= render(Tabler::Page::BodyComponent.new) do %>
     <div class="row">
