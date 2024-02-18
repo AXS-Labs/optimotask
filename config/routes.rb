@@ -9,5 +9,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root to: "account/dashboards#index"
+  namespace :account do
+    resources :boards do
+      get :confirm_destroy
+    end
+  end
+
+  root to: redirect("account/boards")
 end

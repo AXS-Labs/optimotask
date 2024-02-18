@@ -1,0 +1,9 @@
+<div>
+  <div class="card-body">
+    <%= form.error_notification message: form.object.errors[:base].to_sentence if form.object.errors[:base].present? %>
+
+    <div class="mb-3">
+      <%= form.input :title %>
+    </div>
+  </div>
+</div>

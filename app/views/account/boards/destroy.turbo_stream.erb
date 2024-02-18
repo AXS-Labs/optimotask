@@ -1,0 +1,2 @@
+<%= turbo_stream.close_modal %>
+<%= @board.destroyed? ? turbo_stream.remove(dom_id(@board)) : '' %>
