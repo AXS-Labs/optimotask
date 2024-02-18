@@ -36,6 +36,15 @@ class Account::BoardsController < Account::BaseController
     end
   end
 
+  def confirm_destroy
+    @board = authorize(Board.find(params[:board_id]), :destroy?)
+  end
+
+  def destroy
+    @board = authorize(Board.find(params[:id]))
+    @board.destroy
+  end
+
   private
 
   def create_params

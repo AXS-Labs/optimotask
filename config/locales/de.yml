@@ -52,6 +52,13 @@ de:
       edit:
         title: Board bearbeiten
         close: 'Abbrechen'
+      boards:
+        delete: Board löschen
+      confirm_destroy:
+        headline: Bist du dir sicher?
+        text: Möchtest du das Board "%{title}" wirklich löschen? Alle Karten werden ebenfalls gelöscht. Dies kann nicht mehr rückgängig gemacht werden
+        confirm: Jetzt löschen
+        cancel: Abbrechen
   activerecord:
     attributes:
       user:

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   namespace :account do
-    resources :boards
+    resources :boards do
+      get :confirm_destroy
+    end
   end
 
   root to: redirect("account/boards")
