@@ -62,6 +62,8 @@ group :development, :test do
   gem 'rspec-rails'
 
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'pry'
 end
 
 group :development do
@@ -77,3 +79,7 @@ group :development do
   gem 'shoulda-matchers', '~> 6.0'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
